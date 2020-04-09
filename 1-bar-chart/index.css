@@ -1,0 +1,31 @@
+
+body {
+    max-width: 800px;
+    margin: auto;
+    font-family: sans-serif;
+}
+
+h1#title{
+    text-align: center;
+
+}
+
+#tooltip{
+    display: block;
+    width: 8em;
+    background: #ccc;
+    color: #000;
+    position: absolute;
+    font-size: 0.75rem;
+    padding: 0.15rem;
+    visibility: hidden;
+}
+
+svg {
+    width: 100%;
+    margin: auto;
+}
+
+rect:hover {
+    fill: #ccc;
+}
