@@ -1,6 +1,5 @@
 
 body {
-    max-width: 800px;
     margin: auto;
     font-family: sans-serif;
 }
@@ -21,9 +20,16 @@ h1#title{
     visibility: hidden;
 }
 
-svg {
+#svg-container{
     width: 100%;
+    max-width: 800px;
     margin: auto;
+    text-align: center;
+}
+
+svg {
+    margin: auto;
+    width: 100%;
 }
 
 rect:hover {
