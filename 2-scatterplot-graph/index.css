@@ -11,12 +11,12 @@ h2#title2{
 
 #tooltip{
     display: block;
-    width: 8em;
+    width: 20em;
     background: #ccc;
     color: #000;
     position: absolute;
     font-size: 0.75rem;
-    padding: 0.15rem;
+    padding: 0.25rem;
     visibility: hidden;
 }
 
@@ -30,4 +30,8 @@ h2#title2{
 svg#chart {
     margin: auto;
     width: 100%;
+}
+
+.legend {
+    font-size: 0.75rem;
 }

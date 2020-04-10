@@ -44,6 +44,7 @@ const appendScatterplotGraph = async () => {
   }
   const dotRadius = 6; // px
   const selectColor = doping => doping ? 'steelblue' : 'orange';
+  const formatTime = seconds => (new Date(0, 0, 0, 0, 0, seconds)).toLocaleTimeString().slice(3,8);
 
   // Get Data
   const data = await fetchData();
@@ -65,11 +66,14 @@ const appendScatterplotGraph = async () => {
   const tooltip = d3.select('body')
         .append('div')
         .attr('id', 'tooltip');
+  const tooltipName = tooltip.append('div');
+  const tooltipDate = tooltip.append('div');
+  const tooltipDoping = tooltip.append('div');
 
   const getTooltipPos = (x, y) => {
     return {
-      x: x + 5,
-      y: y
+      x: x + 10,
+      y: y + 5
     }
   }
 
@@ -140,6 +144,7 @@ const appendScatterplotGraph = async () => {
     .attr('data-yvalue', d => new Date(0, 0, 0, 0, 0, d.Seconds))
     .attr('r', dotRadius)
     .attr('fill', d => selectColor(d.Doping))
+    .attr('stroke', '#333')
     .attr('cx', d => xScale(new Date(d.Year, 0, 1)))
     .attr('cy', d => yScale(new Date(0, 0, 0, 0, 0, d.Seconds)))
     .on('mouseover', (d, i) => {
@@ -149,46 +154,61 @@ const appendScatterplotGraph = async () => {
         .style('visibility', 'visible')
         .style('left', `${pos.x}px`)
         .style('top', `${pos.y}px`)
-        .text(`${d.Name} : ${d.Nationality}\nYear: ${d.Year}\nTime: ${d.Seconds} ${d.Doping ? `\n${d.Doping}` : '' }`)
+
+      tooltipName.text(`${d.Name} (${d.Nationality})`);
+      tooltipDate.text(`Year: ${d.Year} \n Time: ${formatTime(d.Seconds)}`);
+      tooltipDoping.text(`${d.Doping ? ` \n ${d.Doping}` : '' }`);
     })
     .on('mouseout', () => {
       tooltip.style('visibility', 'hidden')
     });
 
-
   // Legend
-  const legend = svg.append('g')
-        .attr('id', 'legend')
-
-  const legendSize = 15;
-  const legendTop = svgGraphRect.margin.top + 50;
-  const legendRight = svgGraphRect.width - svgGraphRect.margin.right - 50;
+  const legendSize = 12;
+  const legendTop = svgGraphRect.margin.top;
+  const legendRight = svgGraphRect.width - svgGraphRect.margin.right - 200;
   const legendSpacing = 5;
 
-  legend.append('rect')
+  const legend = svg.append('g')
+        .attr('id', 'legend')
+        .attr('transform', `translate(${legendRight}, ${legendTop})`)
+
+  const leg1 = legend.append('g')
+        .attr('class', 'legend')
+
+  leg1.append('rect')
     .attr('fill', selectColor(true))
     .attr('width', legendSize)
     .attr('height', legendSize)
-    .attr('x', legendRight)
-    .attr('y', legendTop)
 
-  legend.append('text')
+  leg1.append('text')
     .text('Doping Allegations')
-    .style('font-size', 8)
-    .attr('x', legendRight)
-    .attr('y', legendTop)
+    .attr('transform', `translate(${legendSize + 3}, ${legendSize * 7/8})`)
 
-  legend.append('rect')
+  const leg2 = legend.append('g')
+        .attr('class', 'legend')
+        .attr('transform', `translate(${legendSize * 11}, 0)`)
+
+  leg2.append('rect')
     .attr('fill', selectColor(false))
     .attr('width', legendSize)
     .attr('height', legendSize)
-    .attr('x', legendRight)
-    .attr('y', legendTop + legendSize + legendSpacing)
 
-  legend.append('text')
+  leg2.append('text')
     .text('No Doping Allegations')
-    .style('font-size', 8)
-    .attr('x', legendRight)
-    .attr('y', legendTop + legendSize + legendSpacing)
+    .attr('transform', `translate(${legendSize + 3}, ${legendSize * 7/8})`)
+
+  // legend.append('rect')
+  //   .attr('fill', selectColor(false))
+  //   .attr('width', legendSize)
+  //   .attr('height', legendSize)
+  //   .attr('x', legendRight)
+  //   .attr('y', legendTop + legendSize + legendSpacing)
+
+  // legend.append('text')
+  //   .text('No Doping Allegations')
+  //   .style('font-size', 8)
+  //   .attr('x', legendRight)
+  //   .attr('y', legendTop + legendSize + legendSpacing)
 
 }
