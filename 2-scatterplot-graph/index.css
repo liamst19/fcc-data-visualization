@@ -1,0 +1,33 @@
+
+body {
+    margin: auto;
+    font-family: sans-serif;
+}
+
+h1#title,
+h2#title2{
+    text-align: center;
+}
+
+#tooltip{
+    display: block;
+    width: 8em;
+    background: #ccc;
+    color: #000;
+    position: absolute;
+    font-size: 0.75rem;
+    padding: 0.15rem;
+    visibility: hidden;
+}
+
+#svg-container{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+svg#chart {
+    margin: auto;
+    width: 100%;
+}
