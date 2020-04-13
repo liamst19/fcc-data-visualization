@@ -1,0 +1,35 @@
+
+body {
+    margin: auto;
+    font-family: sans-serif;
+}
+
+h1,
+h2{
+    text-align: center;
+}
+
+#tooltip{
+    display: block;
+    width: 20em;
+    background: #ccc;
+    color: #000;
+    position: absolute;
+    font-size: 0.75rem;
+    padding: 0.25rem;
+    visibility: hidden;
+}
+
+#svg-container{
+    margin: auto;
+    text-align: center;
+}
+
+svg#chart {
+    width: 100%;
+    margin: auto;
+}
+
+.legend {
+    font-size: 0.75rem;
+}
