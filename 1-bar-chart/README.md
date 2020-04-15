@@ -2,6 +2,8 @@
 
 This is an exercise project from [freeCodeCamp's lessons on Data Visualization library](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart).
 
+[Bar Chart Page](https://liamst19.github.io/fcc-data-visualization/1-bar-chart/)
+
 ## Requirements:
 
 - User Story #1: My chart *should* have a title with a corresponding `id="title"`.

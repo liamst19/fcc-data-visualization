@@ -1,6 +1,8 @@
 # freeCodeCamp Data Visualization Project #2: Scatterplot Graph
 
 This is a project exercise from [freeCodeCamp's lessons on Data Visualization libraries](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph).
+[
+Scatterplot Graph Page](https://liamst19.github.io/fcc-data-visualization/2-scatterplot-graph/)
 
 Dataset: https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json
 

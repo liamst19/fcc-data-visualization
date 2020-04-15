@@ -2,6 +2,8 @@
 
 This is a project exercise from [freeCodeCamp's lessons on Data Visualization](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-treemap-diagram).
 
+[Treemap Diagram Page](https://liamst19.github.io/fcc-data-visualization/5-treemap-diagram/)
+
 Datasets:
 - Kickstarter Pledges: https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/kickstarter-funding-data.json
 - Movie Sales: https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json

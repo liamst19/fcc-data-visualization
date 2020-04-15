@@ -2,6 +2,8 @@
 
 This is part of a series of project exercises from [freeCodeCamp's lessons on Javascript Data Visualization](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-heat-map).
 
+[Heat Map Page](https://liamst19.github.io/fcc-data-visualization/3-heat-map/)
+
 Dataset: https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json
 
 - User Story #1: My heat map should have a title with a corresponding `id="title"`.

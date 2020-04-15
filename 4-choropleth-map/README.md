@@ -2,7 +2,7 @@
 
 This is a project exercise from [freeCodeCamp's lessons on Data Visualization](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map).
 
-Sample: https://codepen.io/freeCodeCamp/full/EZKqza
+[Choropleth Map Page](https://liamst19.github.io/fcc-data-visualization/4-choropleth-map/)
 
 Datasets:
     - US Education Data: https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/for_user_education.json
